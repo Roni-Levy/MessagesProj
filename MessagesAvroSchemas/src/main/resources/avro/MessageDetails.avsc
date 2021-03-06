@@ -1,0 +1,38 @@
+{
+  "name": "MessageDetails",
+  "namespace": "MessagesSchemas",
+  "type": "record",
+  "fields" : [
+    {
+      "name": "sendingTime",
+      "type": [
+        "long"
+      ],
+      "logicalType": "time-millis"
+    },
+    {
+      "name": "messageContent",
+      "type": [
+        "string",
+        "null"
+        ],
+      "default": "null"
+    },
+    {
+      "name": "parsed",
+      "type": [
+        "string",
+        "null"
+      ],
+      "default": "null"
+    },
+    {
+      "name": "serviceId",
+      "type": [
+        "string",
+        "null"
+      ],
+      "default": "null"
+    }
+  ]
+}

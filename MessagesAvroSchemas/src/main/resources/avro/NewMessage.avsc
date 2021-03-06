@@ -1,0 +1,19 @@
+{
+  "name": "NewMessage",
+  "namespace": "MessagesSchemas",
+  "type": "record",
+  "fields" : [
+    {
+      "name": "messageId",
+      "type": "string"
+    },
+    {
+      "name": "handlerName",
+      "type": "string"
+    },
+    {
+      "name": "messageDetails",
+      "type": "MessagesSchemas.MessageDetails"
+    }
+  ]
+}

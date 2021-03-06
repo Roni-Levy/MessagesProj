@@ -12,3 +12,18 @@ gradle-app.setting
 
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
+
+# Default ignored files
+/MessagesAvroSchemas/shelf/
+/MessagesAvroSchemas/workspace.xml
+# Datasource local storage ignored files
+/MessagesAvroSchemas/dataSources/
+/MessagesAvroSchemas/dataSources.local.xml
+# Editor-based HTTP Client requests
+/MessagesAvroSchemas/httpRequests/
+/MessagesAvroSchemas/build/
+/MessagesAvroSchemas/gradle/
+/MessagesAvroSchemas/.gradle/
+/MessagesAvroSchemas/.idea/
+/MessagesAvroSchemas/gradlew
+/MessagesAvroSchemas/gradlew.bat
