@@ -14,6 +14,7 @@ import java.util.Properties;
 
 public class Main {
     private final static String TOPIC = "TYPE-A-HANDLER-TOPIC";
+    private final static String PARSED_MESSAGES_TOPIC = "PARSED-MESSAGES-TOPIC";
     private final static String KAFKA_ADDRESS = "http://localhost:9092";
     private final static String SCHEMA_REGISTRY_ADDRESS = "http://localhost:8081";
     private static KafkaProducer<String, NewMessage> producer;
@@ -49,17 +50,17 @@ public class Main {
         newMessage.getMessageDetails().setParsed("Type A parser");
         newMessage.getMessageDetails().setServiceId("Type A service");
         ProducerRecord<String, NewMessage> record = new ProducerRecord<>(
-                "PARSED-MESSAGES-TOPIC", newMessage);
+                PARSED_MESSAGES_TOPIC, newMessage);
         producer.send(record);
     }
 
     private static Properties getProperties() {
         Properties props = new Properties();
         props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, KAFKA_ADDRESS);
-        props.put(ProducerConfig.CLIENT_ID_CONFIG, "PARSED-MESSAGES-TOPIC");
+        props.put(ProducerConfig.CLIENT_ID_CONFIG, PARSED_MESSAGES_TOPIC);
         props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, LongSerializer.class.getName());
         props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, io.confluent.kafka.serializers.KafkaAvroSerializer.class);
-        props.put(KafkaAvroSerializerConfig.SCHEMA_REGISTRY_URL_CONFIG, "http://localhost:8081");
+        props.put(KafkaAvroSerializerConfig.SCHEMA_REGISTRY_URL_CONFIG, SCHEMA_REGISTRY_ADDRESS);
         return props;
     }
 }
