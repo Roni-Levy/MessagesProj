@@ -2,15 +2,15 @@ package ClientDataTypes;
 
 public class NewMessageRequest {
     private String handlerName;
-    private String handlerType;
+    private String messageContent;
 
     public NewMessageRequest(String name, String type) {
         handlerName = name;
-        handlerType = type;
+        messageContent = type;
     }
 
-    public String getHandlerType() {
-        return handlerType;
+    public String getMessageContent() {
+        return messageContent;
     }
 
     public String getHandlerName() {

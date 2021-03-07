@@ -52,16 +52,19 @@ public class HandlerRequest {
     }
 
     private NewMessage newMessageRequestToAvroNewMessage(NewMessageRequest newMessageRequest) {
+        String[] handlerProperties = newMessageRequest.getHandlerName().split(" ");
+
         return NewMessage.newBuilder()
                 .setMessageId(generateUuid())
-                .setHandlerName(newMessageRequest.getHandlerName())
+                .setHandlerName(handlerProperties[0])
+                .setParserName(handlerProperties[1])
                 .setMessageDetails(creteMessageDetails(newMessageRequest))
                 .build();
     }
 
     public MessageDetails creteMessageDetails(NewMessageRequest newMessageRequest) {
         return MessageDetails.newBuilder()
-                .setMessageContent(newMessageRequest.getHandlerType())
+                .setMessageContent(newMessageRequest.getMessageContent())
                 .setSendingTime(new Date().getTime())
                 .build();
     }
