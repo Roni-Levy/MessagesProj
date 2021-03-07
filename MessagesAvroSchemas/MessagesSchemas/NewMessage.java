@@ -7,10 +7,11 @@ package MessagesSchemas;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class NewMessage extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"NewMessage\",\"namespace\":\"MessagesSchemas\",\"fields\":[{\"name\":\"messageId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"handlerName\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"messageDetails\",\"type\":{\"type\":\"record\",\"name\":\"MessageDetails\",\"fields\":[{\"name\":\"sendingTime\",\"type\":[\"long\"],\"logicalType\":\"time-millis\"},{\"name\":\"messageContent\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"],\"default\":\"null\"},{\"name\":\"parsed\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"],\"default\":\"null\"},{\"name\":\"serviceId\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"],\"default\":\"null\"}]}}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"NewMessage\",\"namespace\":\"MessagesSchemas\",\"fields\":[{\"name\":\"messageId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"handlerName\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"parserName\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"messageDetails\",\"type\":{\"type\":\"record\",\"name\":\"MessageDetails\",\"fields\":[{\"name\":\"sendingTime\",\"type\":[\"long\"],\"logicalType\":\"time-millis\"},{\"name\":\"messageContent\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"],\"default\":\"null\"},{\"name\":\"parsed\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"],\"default\":\"null\"},{\"name\":\"serviceId\",\"type\":[{\"type\":\"string\",\"avro.java.string\":\"String\"},\"null\"],\"default\":\"null\"}]}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   @Deprecated public java.lang.String messageId;
   @Deprecated public java.lang.String handlerName;
+  @Deprecated public java.lang.String parserName;
   @Deprecated public MessagesSchemas.MessageDetails messageDetails;
 
   /**
@@ -23,9 +24,10 @@ public class NewMessage extends org.apache.avro.specific.SpecificRecordBase impl
   /**
    * All-args constructor.
    */
-  public NewMessage(java.lang.String messageId, java.lang.String handlerName, MessagesSchemas.MessageDetails messageDetails) {
+  public NewMessage(java.lang.String messageId, java.lang.String handlerName, java.lang.String parserName, MessagesSchemas.MessageDetails messageDetails) {
     this.messageId = messageId;
     this.handlerName = handlerName;
+    this.parserName = parserName;
     this.messageDetails = messageDetails;
   }
 
@@ -35,7 +37,8 @@ public class NewMessage extends org.apache.avro.specific.SpecificRecordBase impl
     switch (field$) {
     case 0: return messageId;
     case 1: return handlerName;
-    case 2: return messageDetails;
+    case 2: return parserName;
+    case 3: return messageDetails;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -45,7 +48,8 @@ public class NewMessage extends org.apache.avro.specific.SpecificRecordBase impl
     switch (field$) {
     case 0: messageId = (java.lang.String)value$; break;
     case 1: handlerName = (java.lang.String)value$; break;
-    case 2: messageDetails = (MessagesSchemas.MessageDetails)value$; break;
+    case 2: parserName = (java.lang.String)value$; break;
+    case 3: messageDetails = (MessagesSchemas.MessageDetails)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -78,6 +82,21 @@ public class NewMessage extends org.apache.avro.specific.SpecificRecordBase impl
    */
   public void setHandlerName(java.lang.String value) {
     this.handlerName = value;
+  }
+
+  /**
+   * Gets the value of the 'parserName' field.
+   */
+  public java.lang.String getParserName() {
+    return parserName;
+  }
+
+  /**
+   * Sets the value of the 'parserName' field.
+   * @param value the value to set.
+   */
+  public void setParserName(java.lang.String value) {
+    this.parserName = value;
   }
 
   /**
@@ -118,6 +137,7 @@ public class NewMessage extends org.apache.avro.specific.SpecificRecordBase impl
 
     private java.lang.String messageId;
     private java.lang.String handlerName;
+    private java.lang.String parserName;
     private MessagesSchemas.MessageDetails messageDetails;
 
     /** Creates a new Builder */
@@ -136,9 +156,13 @@ public class NewMessage extends org.apache.avro.specific.SpecificRecordBase impl
         this.handlerName = data().deepCopy(fields()[1].schema(), other.handlerName);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.messageDetails)) {
-        this.messageDetails = data().deepCopy(fields()[2].schema(), other.messageDetails);
+      if (isValidValue(fields()[2], other.parserName)) {
+        this.parserName = data().deepCopy(fields()[2].schema(), other.parserName);
         fieldSetFlags()[2] = true;
+      }
+      if (isValidValue(fields()[3], other.messageDetails)) {
+        this.messageDetails = data().deepCopy(fields()[3].schema(), other.messageDetails);
+        fieldSetFlags()[3] = true;
       }
     }
     
@@ -153,9 +177,13 @@ public class NewMessage extends org.apache.avro.specific.SpecificRecordBase impl
         this.handlerName = data().deepCopy(fields()[1].schema(), other.handlerName);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.messageDetails)) {
-        this.messageDetails = data().deepCopy(fields()[2].schema(), other.messageDetails);
+      if (isValidValue(fields()[2], other.parserName)) {
+        this.parserName = data().deepCopy(fields()[2].schema(), other.parserName);
         fieldSetFlags()[2] = true;
+      }
+      if (isValidValue(fields()[3], other.messageDetails)) {
+        this.messageDetails = data().deepCopy(fields()[3].schema(), other.messageDetails);
+        fieldSetFlags()[3] = true;
       }
     }
 
@@ -209,6 +237,31 @@ public class NewMessage extends org.apache.avro.specific.SpecificRecordBase impl
       return this;
     }
 
+    /** Gets the value of the 'parserName' field */
+    public java.lang.String getParserName() {
+      return parserName;
+    }
+    
+    /** Sets the value of the 'parserName' field */
+    public MessagesSchemas.NewMessage.Builder setParserName(java.lang.String value) {
+      validate(fields()[2], value);
+      this.parserName = value;
+      fieldSetFlags()[2] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'parserName' field has been set */
+    public boolean hasParserName() {
+      return fieldSetFlags()[2];
+    }
+    
+    /** Clears the value of the 'parserName' field */
+    public MessagesSchemas.NewMessage.Builder clearParserName() {
+      parserName = null;
+      fieldSetFlags()[2] = false;
+      return this;
+    }
+
     /** Gets the value of the 'messageDetails' field */
     public MessagesSchemas.MessageDetails getMessageDetails() {
       return messageDetails;
@@ -216,21 +269,21 @@ public class NewMessage extends org.apache.avro.specific.SpecificRecordBase impl
     
     /** Sets the value of the 'messageDetails' field */
     public MessagesSchemas.NewMessage.Builder setMessageDetails(MessagesSchemas.MessageDetails value) {
-      validate(fields()[2], value);
+      validate(fields()[3], value);
       this.messageDetails = value;
-      fieldSetFlags()[2] = true;
+      fieldSetFlags()[3] = true;
       return this; 
     }
     
     /** Checks whether the 'messageDetails' field has been set */
     public boolean hasMessageDetails() {
-      return fieldSetFlags()[2];
+      return fieldSetFlags()[3];
     }
     
     /** Clears the value of the 'messageDetails' field */
     public MessagesSchemas.NewMessage.Builder clearMessageDetails() {
       messageDetails = null;
-      fieldSetFlags()[2] = false;
+      fieldSetFlags()[3] = false;
       return this;
     }
 
@@ -240,7 +293,8 @@ public class NewMessage extends org.apache.avro.specific.SpecificRecordBase impl
         NewMessage record = new NewMessage();
         record.messageId = fieldSetFlags()[0] ? this.messageId : (java.lang.String) defaultValue(fields()[0]);
         record.handlerName = fieldSetFlags()[1] ? this.handlerName : (java.lang.String) defaultValue(fields()[1]);
-        record.messageDetails = fieldSetFlags()[2] ? this.messageDetails : (MessagesSchemas.MessageDetails) defaultValue(fields()[2]);
+        record.parserName = fieldSetFlags()[2] ? this.parserName : (java.lang.String) defaultValue(fields()[2]);
+        record.messageDetails = fieldSetFlags()[3] ? this.messageDetails : (MessagesSchemas.MessageDetails) defaultValue(fields()[3]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

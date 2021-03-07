@@ -11,6 +11,8 @@ version '0.1.0'
 
 sourceCompatibility = 1.8
 
+mainClassName='Main'
+
 dependencies {
     compile 'org.apache.avro:avro:1.10.1'
     compile group: 'org.apache.commons', name:'commons-lang3', version:'3.4'
