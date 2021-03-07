@@ -42,3 +42,18 @@ gradle-app.setting
 /RestApiServer/.idea/
 /RestApiServer/gradlew
 /RestApiServer/gradlew.bat
+
+# Default ignored files
+/TypeAHandlerServer/shelf/
+/TypeAHandlerServer/workspace.xml
+# Datasource local storage ignored files
+/TypeAHandlerServer/dataSources/
+/TypeAHandlerServer/dataSources.local.xml
+# Editor-based HTTP Client requests
+/TypeAHandlerServer/httpRequests/
+/TypeAHandlerServer/build/
+/TypeAHandlerServer/gradle/
+/TypeAHandlerServer/.gradle/
+/TypeAHandlerServer/.idea/
+/TypeAHandlerServer/gradlew
+/TypeAHandlerServer/gradlew.bat
