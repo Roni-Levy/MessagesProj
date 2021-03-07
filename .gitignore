@@ -1,6 +1,6 @@
 .gradle
 /build/
-
+/.idea/
 # Ignore Gradle GUI config
 gradle-app.setting
 
@@ -27,3 +27,18 @@ gradle-app.setting
 /MessagesAvroSchemas/.idea/
 /MessagesAvroSchemas/gradlew
 /MessagesAvroSchemas/gradlew.bat
+
+# Default ignored files
+/RestApiServer/shelf/
+/RestApiServer/workspace.xml
+# Datasource local storage ignored files
+/RestApiServer/dataSources/
+/RestApiServer/dataSources.local.xml
+# Editor-based HTTP Client requests
+/RestApiServer/httpRequests/
+/RestApiServer/build/
+/RestApiServer/gradle/
+/RestApiServer/.gradle/
+/RestApiServer/.idea/
+/RestApiServer/gradlew
+/RestApiServer/gradlew.bat
