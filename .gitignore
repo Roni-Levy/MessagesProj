@@ -57,3 +57,18 @@ gradle-app.setting
 /TypeAHandlerServer/.idea/
 /TypeAHandlerServer/gradlew
 /TypeAHandlerServer/gradlew.bat
+
+# Default ignored files
+/TypeBHandlerServer/shelf/
+/TypeBHandlerServer/workspace.xml
+# Datasource local storage ignored files
+/TypeBHandlerServer/dataSources/
+/TypeBHandlerServer/dataSources.local.xml
+# Editor-based HTTP Client requests
+/TypeBHandlerServer/httpRequests/
+/TypeBHandlerServer/build/
+/TypeBHandlerServer/gradle/
+/TypeBHandlerServer/.gradle/
+/TypeBHandlerServer/.idea/
+/TypeBHandlerServer/gradlew
+/TypeBHandlerServer/gradlew.bat
